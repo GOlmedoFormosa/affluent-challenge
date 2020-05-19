@@ -10,11 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
     "crossenv": "0.0.2-security",
     "dotenv-safe": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^3.22.0",
+    "puppeteer": "^3.1.0",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
     "winston": "^3.2.1"
