@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node src/index.js",
     "watch": "nodemon src/index.js",
-    "knex": "knex"
+    "knex": "knex",
+    "processUsers": "node src/tools/processUsers.js",
+    "processScraping": "node src/tools/processScraping.js"
   },
   "keywords": [],
   "author": "",

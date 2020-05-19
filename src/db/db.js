@@ -1,3 +1,6 @@
+require('dotenv-safe').config({ // this is here just to be able of execute the process. (check the script in package.json)
+  allowEmptyValues: true
+});
 const knex = require('knex');
 const knexFile = require('../../knexfile').development;
 const db = knex(knexFile);
