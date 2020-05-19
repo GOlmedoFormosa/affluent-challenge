@@ -1,8 +1,11 @@
 const puppeteer = require('puppeteer');
+
+// data
 const loginURL = 'https://develop.pub.afflu.net/login';
 const dataListURL = 'https://develop.pub.afflu.net/list?type=dates';
 const username = 'developertest@affluent.io';
 const password = 'SOpcR^37';
+
 const process = async () => {
   try {
     const browser = await puppeteer.launch({ headless: false });
