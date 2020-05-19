@@ -1,6 +1,8 @@
 const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 
+const db = require('../db/db.js');
+
 // data
 const loginURL = 'https://develop.pub.afflu.net/login';
 const username = 'developertest@affluent.io';
@@ -78,4 +80,23 @@ const process = async () => {
   }
 }
 
-process();
+process().then(async (rows) => {
+  console.log('scraping finished');
+  const result = await db.insert('dates', rows);
+  console.log('insert finished');
+  console.log('result', result);
+}).catch(error => console.log('error', error));
+
+
+// [
+//   {
+//     date: 'Dec 24, 2019',
+//     commissionsTotal: '$318.95',
+//     salesNet: '78',
+//     leadsNet: '0',
+//     clicks: '1,333',
+//     epc: '$0.24',
+//     impressions: '0',
+//     cr: '5.85%'
+//   }
+// ]
