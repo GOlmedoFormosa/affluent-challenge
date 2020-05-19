@@ -5,6 +5,6 @@ const datesRoutes = require('./dates');
 const router = express.Router();
 
 router.use('/users', userRoutes);
-// router.use('/dates', datesRoutes);
+router.use('/dates', datesRoutes);
 
 module.exports = router;
