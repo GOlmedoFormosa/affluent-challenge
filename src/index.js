@@ -7,6 +7,7 @@ const compress = require('compression');
 const cors = require('cors');
 
 const logger = require('./lib/logger');
+const errorHandlers = require('./middlewares/errorHandlers');
 
 const port = process.env.PORT || 8080;
 
@@ -25,4 +26,6 @@ app.use(helmet.hidePoweredBy());
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
 
+// error handler, send stacktrace only during development
+app.use(errorHandlers);
 app.listen(port, () => logger.info(`Running on port ${port} env ${process.env.NODE_ENV}`));
