@@ -1,4 +1,7 @@
 const request = require('request-promise');
+
+const db = require('../src/db/db.js');
+
 const url = 'https://reqres.in/api/users';
 
 const fetchUsers = async() => {
@@ -25,10 +28,11 @@ const fetchUsers = async() => {
       // go to the next page
       currentPage++;
     }
+    await db.insert('users', users);
   } catch(error) {
     console.log('error', error);
   }
-  console.log('users', users);
+  // console.log('users', users);
   return users;
 }
 

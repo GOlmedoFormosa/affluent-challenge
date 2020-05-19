@@ -8,6 +8,7 @@ const cors = require('cors');
 
 const logger = require('./lib/logger');
 const errorHandlers = require('./middlewares/errorHandlers');
+const routes = require('./routes/v1/index');
 
 const port = process.env.PORT || 8080;
 
@@ -25,6 +26,16 @@ app.use(helmet());
 app.use(helmet.hidePoweredBy());
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
+// middleware to serve static files
+app.use(express.static('public'));
+
+// root html
+app.get('/', (req, res) => {
+  res.sendFile('/public/index.html');
+});
+
+// mount api/v1
+app.use('/api/v1', routes);
 
 // error handler, send stacktrace only during development
 app.use(errorHandlers);
