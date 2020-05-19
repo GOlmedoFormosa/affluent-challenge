@@ -5,6 +5,7 @@ const express = require('express');
 const helmet = require('helmet');
 const compress = require('compression');
 const cors = require('cors');
+const path = require('path');
 
 const logger = require('./lib/logger');
 const errorHandlers = require('./middlewares/errorHandlers');
@@ -26,13 +27,21 @@ app.use(helmet());
 app.use(helmet.hidePoweredBy());
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors());
-// middleware to serve static files
-app.use(express.static('public'));
 
-// root html
-app.get('/', (req, res) => {
-  res.sendFile('/public/index.html');
-});
+// middleware to serve static files
+app.use(express.static(path.join(__dirname, '/../public/')));
+
+// // root html
+// app.get('/', (req, res) => {
+//   res.sendfile('../public/index.html');
+// });
+// app.get('/users', (req, res) => {
+//   console.log('test');
+//   res.render(__dirname + '/../public/users.html');
+// });
+// // app.get('/dates', (req, res) => {
+//   res.sendfile('../public/dates.html');
+// });
 
 // mount api/v1
 app.use('/api/v1', routes);

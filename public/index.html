@@ -3,9 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Challenge</title>
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/toolbar.css">
+  <link rel="stylesheet" href="/css/side-drawer.css">
+  <link rel="stylesheet" href="/css/backdrop.css">
+  <link rel="stylesheet" href="/css/stolen-styles.css">
 </head>
 <body>
-  hello world
+    <header class="toolbar">
+      <nav class="toolbar__navigation">
+        <div class="toolbar__toggle-button" onclick="toggleSideDrawer()">
+          <button class="toggle-button">
+            <div class="toggle-button__line"></div>
+            <div class="toggle-button__line"></div>
+            <div class="toggle-button__line"></div>
+          </button>
+        </div>
+        <div class="toolbar__logo"><a href="/">Challenge</a></div>
+        <div class="spacer"></div>
+        <div class="toolbar__navigation-items">
+          <ul>
+            <li><a href="/users.html">Users</a></li>
+            <li><a href="/dates.html">Dates</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <nav class="side-drawer">
+      <ul>
+        <li>
+          <a href="/users.html">Users</a>
+        </li>
+        <li>
+          <a href="/dates.html">Dates</a>
+        </li>
+      </ul>
+    </nav> 
+    <div class="backdrop hide" onclick="toggleSideDrawer()"></div>
+    <main>
+      <svg class="header-logo-svg" id="sitelogo" viewBox="0 0 1330 242.8" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <linearGradient id="header-logo-svgLinearGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="var(--gray)"></stop>
+          <stop offset="100%" stop-color="var(--gray)"></stop>
+        </linearGradient>
+        <g class="logosvg">
+          <rect x="0" y="0" width="1322.2" height="242.8" fill="transparent"></rect>
+          <g class="logosvg-stripes">
+            <rect class="logosvg-stripes-color" x="804.9" y="2.5" width="170.5" height="52.5"></rect>
+            <rect class="logosvg-stripes" x="804.9" y="91.5" width="170.5" height="52.5"></rect>
+            <rect class="logosvg-stripes" x="804.9" y="181.3" width="170.5" height="52.5"></rect>
+          </g>
+          <g class="logosvg-letters" stroke="url(#header-logo-svgLinearGradient)">
+            <polygon points="67.4,233.8 2.4,233.8 62.4,1.9 123.4,1.8 183.4,233.8 117.9,233.8 92.9,69.5 68.9,233.8 "></polygon>
+            <polygon points="201.4,233.8 201.4,2.2 317.4,2 317.4,55.8 265.4,55.8 265.4,91.8 317.4,91.8 317.4,143.8 
+                265.4,143.8 265.4,233.8 "></polygon>
+            <polygon points="343.1,233.8 343.1,2.4 459.1,2.3 459.1,55.8 407.1,55.8 407.1,91.8 459.1,91.8 459.1,143.8 
+                407.1,143.8 407.1,233.8 "></polygon>
+            <polygon points="476.7,2.7 476.7,233.8 592.7,233.8 592.7,180.5 539.4,180.5 539.4,2.5 "></polygon>
+            <path d="M709.4,3.2v162.6c0,9.6-7.8,17.3-17.3,17.3h0c-9.6,0-17.3-7.8-17.3-17.3V3l-62-0.1v160.5
+                c0,43.8,35.5,79.3,79.3,79.3h0c43.8,0,79.3-35.5,79.3-79.3V2.8L709.4,3.2z"></path>
+            <polygon points="1008.9,233.8 1008.9,3.9 1062.9,3.8 1119.9,144 1119.9,3.7 1171.4,3.5 1171.4,233.8 
+                1120.4,233.8 1061.9,91.5 1061.9,233.8 "></polygon>
+            <polygon points="1190.4,4.2 1190.4,55.3 1224.9,55.3 1224.9,233.8 1285.9,233.8 1285.9,55.3 1322.2,55.3 
+                1322.2,4 1190.4,4.3 "></polygon>
+          </g>
+        </g>
+      </svg>
+    </main>
+    <script src="/js/menu.js"></script>
 </body>
 </html>
