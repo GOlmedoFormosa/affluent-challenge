@@ -17,6 +17,10 @@ const clear = async function ( selector) {
   }, selector);
 };
 
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 const process = async () => {
   try {
     // set defaultViewport to null otherwise I click in the floating button instead.
@@ -53,7 +57,9 @@ const process = async () => {
     const tableHeaders = [];
     const scrapedRows = [];
     $('#DataTables_Table_0 thead tr:first-child th').each((index, header) => {
-      tableHeaders.push($(header).text().toLowerCase().replace(' - ', ''));
+      const textArr = $(header).text().toLowerCase().split(' - ');
+      if(textArr.length === 2) textArr[1] = capitalizeFirstLetter(textArr[1])
+      tableHeaders.push(textArr.join(''));
     });
     console.log('trs', $('#DataTables_Table_0 tbody tr').length);
     $('#DataTables_Table_0 tbody tr').each((index, element) => {
