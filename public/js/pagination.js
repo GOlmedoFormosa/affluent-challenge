@@ -9,23 +9,11 @@ const paginationButtons = (page, pages) => {
   let buttons = `<input type='button' value='&lt;&lt; Prev' onclick='sort(${page - 1},${pages})' ${prev}>`;
   // add validation when there are a lot of pages
   if(pages > 5) {
-    if(page > 1 && page < pages) {
-      buttons += `<input type='button' id="id${1}" value="${1}" onclick='sort(${1}, ${pages})'>`;
-      if(page !== 2)
-        buttons += `<input type='button' id="id${page - 1}" value="${page - 1}" onclick='sort(${page - 1}, ${pages})'>`;
-      buttons += `...<input type='button' id="id${page}" value="${page}" onclick='sort(${page}, ${pages})'>`;
-      buttons += `...<input type='button' id="id${page + 1}" value="${page + 1}" onclick='sort(${page + 1}, ${pages})'>`;
-      if(page !== pages - 1)
-        buttons += `<input type='button' id="id${pages}" value="${pages}" onclick='sort(${pages}, ${pages})'>`;
-    } else if(page === pages) {
-      buttons += `<input type='button' id="id${1}" value="${1}" onclick='sort(${1}, ${pages})'>`;
-      buttons += `...<input type='button' id="id${page - 1}" value="${page - 1}" onclick='sort(${page - 1}, ${pages})'>`;
-      buttons += `<input type='button' id="id${page}" value="${page}" onclick='sort(${page}, ${pages})'>`;
-    } else if(page === 1) {
-      buttons += `<input type='button' id="id${page}" value="${page}" onclick='sort(${page}, ${pages})'>`;
-      buttons += `<input type='button' id="id${page + 1}" value="${page + 1}" onclick='sort(${page + 1}, ${pages})'>`;
+    if(page !== 1)
+      buttons += `<input type='button' id="id${1}" value="${1}" onclick='sort(${1}, ${pages})'>...`;
+    buttons += `<input type='button' id="id${page}" value="${page}" onclick='sort(${page}, ${pages})'>`;
+    if(page !== pages)
       buttons += `...<input type='button' id="id${pages}" value="${pages}" onclick='sort(${pages}, ${pages})'>`;
-    }
   } else {
   // create buttons for every page
     for (let i = 1; i <= pages; i++) {
