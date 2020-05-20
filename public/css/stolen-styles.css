@@ -199,6 +199,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     width: 50rem;
     margin: 80px auto;
 }
+@media (max-width: 846px) {
+    .header-logo-svg {
+        width: 30rem;
+    }
+}
+@media (max-width: 600px) {
+    .header-logo-svg {
+        width: 15rem;
+    }
+}
 .header-logo_top {
     background-color: transparent;
     box-shadow: none;

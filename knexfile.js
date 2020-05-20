@@ -1,4 +1,6 @@
-// Update with your config settings.
+require('dotenv-safe').config({ 
+  allowEmptyValues: true
+});
 module.exports = {
   development: {
     client: process.env.DB_CLIENT_DEV,

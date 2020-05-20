@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scraping Results</title>
+  <title>Users</title>
+  <link rel="icon" type="image/png" sizes="180x180" href="https://www.affluent.io//wp-content/themes/affluent/imgs/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://www.affluent.io/wp-content/themes/affluent/imgs/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://www.affluent.io/wp-content/themes/affluent/imgs/favicons/favicon-16x16.png">
   <link rel="stylesheet" href="/css/base.css">
   <link rel="stylesheet" href="/css/toolbar.css">
   <link rel="stylesheet" href="/css/side-drawer.css">
   <link rel="stylesheet" href="/css/backdrop.css">
+  <link rel="stylesheet" href="/css/table.css">
 </head>
 <body>
     <header class="toolbar">
@@ -41,9 +45,29 @@
     </nav> 
     <div class="backdrop hide" onclick="toggleSideDrawer()"></div>
     <main>    
-      Users
+      <h2 class="title">Users</h2>
+      <table id="myTable" class="content-table">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>email</th>
+            <th>first name</th>
+            <th>last name</th>
+            <th>avatar url</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
     </main>
     <script src="/js/menu.js"></script>
-    <script src="/js/menu.js"></script>
+    <script src="/js/users.js"></script>
+    <script src="/js/pagination.js"></script>
+    <script>
+      window.onload = async () => {
+        await loadRows();
+        addPagination();
+      }
+      </script>
   </body>
 </html>

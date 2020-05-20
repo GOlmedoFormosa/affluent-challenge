@@ -19,3 +19,8 @@ main {
   position: relative; 
   top: 64px;
 }
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+}

@@ -5,6 +5,7 @@
   width: 100%;
   background-color: black;
   height: 56px;
+  z-index: 50;
 }
 .toolbar__navigation {
   display: flex;
