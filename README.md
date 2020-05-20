@@ -30,8 +30,8 @@ Ensure you have the following installed on your local machine:
 - Clone 
 
   ```bash
-    - git clone https://github.com/GOlmedoFormosa/scraping-101.git
-    - cd scraping-101
+    - git clone https://github.com/GOlmedoFormosa/node-scraping
+    - cd node-scraping
     - npm install
   ```
 
