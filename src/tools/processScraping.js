@@ -3,11 +3,12 @@ const cheerio = require('cheerio');
 const logger = require('../lib/logger');
 const { clear, capitalizeFirstLetter } = require('../utils/utils');
 const db = require('../db/db.js');
+const configDev = require('./scraperCredentials');
 
 // data
 const loginURL = 'https://develop.pub.afflu.net/login';
-const username = 'developertest@affluent.io';
-const password = 'SOpcR^37';
+const username = configDev.SC_USER_DEV;
+const password = configDev.SC_PASSWORD_DEV;
 
 // I could use list?type=dates&startDate=2019-04-30&endDate=2020-04-01
 const navigateToDataListURL = 'https://develop.pub.afflu.net/list?type=dates';
@@ -81,6 +82,7 @@ const process = async () => {
     page = await filterByDateRange(page);
     page = await showAllRows(page);
     const users = await mapHtmlRowsToUserJSObjects(page);
+    browser.close();
     return users;
   } catch (error) {
     logger.error(error);

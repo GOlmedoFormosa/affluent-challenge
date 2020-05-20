@@ -33,6 +33,10 @@
   border-bottom: 2px solid #404754;
 }
 
+#table-buttons {
+  text-align: center;
+}
+
 input[type="button"] {
   transition: all .3s;
   border: 1px solid #ddd;
