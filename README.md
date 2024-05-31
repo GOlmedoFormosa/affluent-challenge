@@ -1,4 +1,4 @@
-# scraping 101
+# Affluent Challenge
 
 ## Project Overview
 This is my first contact with scrapping, I did scraping of a website called [Affluent](https://www.affluent.io/) and I learned a few things that we should considerate before use puppeteer or any automate browser.
